@@ -1,0 +1,18 @@
+{
+  "name": "line-magic",
+  "version": "0.0.1",
+  "description": "A util library for manipulating lines in JavaScript",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Line",
+    "Util",
+    "JavaScript",
+    "Helper"
+  ],
+  "author": "Yousaf Wazir",
+  "license": "ISC"
+}
