@@ -142,3 +142,20 @@ export function extractLineRange(str, start, end) {
 
   return lines.slice(_start, _end);
 }
+
+/**
+ * Replaces whitespace characters in a string with visible markers.
+ *
+ * - Spaces (`" "`) are replaced with `[␣]`
+ * - Tabs (`"\t"`) are replaced with `[→]`
+ * - Carriage returns (`"\r"`) are replaced with `[↵]`
+ *
+ * @param {string} str - The input string to process.
+ * @returns {string} The string with visible representations of whitespace.
+ */
+export function visualizeWhitespace(str) {
+  return str
+    .replaceAll(" ", "[␣]") // Replace spaces
+    .replaceAll("\t", "[→]") // Replace tabs
+    .replaceAll("\r", "[↵]"); // Replace carriage returns
+}
