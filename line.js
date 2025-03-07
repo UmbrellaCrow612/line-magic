@@ -91,4 +91,10 @@ function sortLines() {}
 /**
  * Extract a specific range of lines (e.g., lines 3 to 5).
  */
-function extractLineRange() {}
+function extractLineRange(str, range) {}
+
+/**
+ * Extract a specific range of lines (e.g., lines 3 to 5) from a specific index including the line that
+ * the index falls in.
+ */
+function extractLineRangeFrom() {}
