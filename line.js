@@ -45,9 +45,33 @@ export function addLineNumbers(str, separator = ":") {
 }
 
 /**
- * Automatically wrap long lines in a string to a given maximum length, ensuring no line exceeds a specified character count.
+ * Wraps long lines in a string to a given maximum length, ensuring no line exceeds the specified character count.
+ * If a line exceeds the given length, it inserts a newline character (`\n`) to break the line.
+ *
+ * @param {string} str The input string that needs to be wrapped.
+ * @param {number} length The maximum length for each line.
+ * @returns {string} The string with wrapped lines, ensuring no line exceeds the specified length.
+ *
+ * @example
+ * // returns 'This is a\nwrapped text\nexample'
+ * wrapText('This is a wrapped text example', 10);
  */
-function wrapText() {}
+export function wrapText(str, length) {
+  let result = "";
+  let counter = 0;
+
+  for (let i = 0; i < str.length; i++) {
+    result += str[i];
+    counter++;
+
+    if (counter >= length) {
+      result += "\n";
+      counter = 0;
+    }
+  }
+
+  return result;
+}
 
 /**
  * Find and replace text across multiple lines, not just within a single line

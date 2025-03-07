@@ -1,3 +1,3 @@
-import { addLineNumbers } from "./line.js";
+import { addLineNumbers, wrapText } from "./line.js";
 
-console.log(addLineNumbers("line one \nLine two"));
+export { addLineNumbers, wrapText };
