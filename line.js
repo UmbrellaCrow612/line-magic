@@ -113,6 +113,32 @@ export function extractLines(str, range) {
 function extractLineRangeFrom() {}
 
 /**
- * Get the range of lines specified by there index - give me the second to 5 line
+ * Extracts a range of lines from the given string based on the specified start and end line indices.
+ *
+ * @param {string} str - The input string with lines separated by newline characters.
+ * @param {number} start - The starting index of the line range (inclusive).
+ * @param {number} end - The ending index of the line range (inclusive).
+ * @returns {string[]} An array containing the lines within the specified range.
+ *
+ * @example
+ * const text = `Line 1\nLine 2\nLine 3\nLine 4\nLine 5`;
+ * const result = extractLineRange(text, 1, 3);
+ * console.log(result); // Output: ['Line 2', 'Line 3', 'Line 4']
  */
-function extractLineRange() {}
+export function extractLineRange(str, start, end) {
+  let _start = start < 0 ? 0 : start;
+  let _end =
+    end >= 0 && end < str.split("\n").length ? end + 1 : str.split("\n").length;
+
+  const lines = str.split("\n");
+
+  if (_end > lines.length) {
+    _end = lines.length;
+  }
+
+  if (_start > _end) {
+    return [];
+  }
+
+  return lines.slice(_start, _end);
+}

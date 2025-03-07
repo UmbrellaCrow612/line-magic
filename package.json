@@ -1,6 +1,6 @@
 {
   "name": "line-magic",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A util library for manipulating lines in JavaScript",
   "main": "index.js",
   "type": "module",
