@@ -8,7 +8,7 @@
 function convertSpaceToTabs() {}
 
 /**
- * Identify whether a string uses spaces or tabs for indentation.
+ * Identify whether a string uses spaces or tabs for indentation or both.
  */
 function detectIndentionStyle() {}
 

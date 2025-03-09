@@ -159,3 +159,18 @@ export function visualizeWhitespace(str) {
     .replaceAll("\t", "[→]") // Replace tabs
     .replaceAll("\r", "[↵]"); // Replace carriage returns
 }
+
+/**
+ * Visualizes newlines in a string by replacing them with the string '[n]'.
+ * This can be useful for debugging or visually inspecting the structure of the string.
+ *
+ * @param {string} str - The input string in which newlines will be visualized.
+ * @returns {string} - A new string where all newlines are replaced by '[n]'.
+ *
+ * @example
+ * const result = visualizeNewLine("Hello\nWorld");
+ * console.log(result); // "Hello[n]World"
+ */
+export function visualizeNewLine(str) {
+  return str.replaceAll("\n", "\n[n]");
+}
