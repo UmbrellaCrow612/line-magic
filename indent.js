@@ -206,23 +206,3 @@ export function removeIndention(str, count = null) {
 
   return str.replace(/^[\s\t\r]+/, "");
 }
-
-/**
- * Increase or decrease indentation for all lines
- */
-function indentLines() {}
-
-/**
- * Remove leading spaces or tabs from each line.
- */
-function trimLeadingIndentation() {}
-
-/**
- * Adjust all lines to match the indentation of the first non-empty line.
- */
-function alignIndentation() {}
-
-/**
- * Return the number of leading spaces/tabs on a given line.
- */
-function getIndentLevel() {}
