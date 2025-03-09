@@ -7,7 +7,7 @@ import {
   visualizeWhitespace,
   wrapText,
 } from "./line.js";
-import { trimBlankLines } from "./trim.js";
+import { ellipsize, trimBlankLines } from "./trim.js";
 
 export {
   addLineNumbers,
@@ -19,4 +19,5 @@ export {
   visualizeNewLine,
   removeIndention,
   trimBlankLines,
+  ellipsize
 };
