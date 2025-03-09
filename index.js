@@ -16,6 +16,7 @@ import {
   visualizeWhitespace,
   wrapText,
 } from "./line.js";
+import { padLeft, padRight } from "./pad.js";
 import { ellipsize, trimBlankLines } from "./trim.js";
 
 export {
@@ -34,4 +35,6 @@ export {
   detectIndentionStyle,
   visualizeTab,
   normalizeIndentationToWhiteSpace,
+  padLeft,
+  padRight
 };
