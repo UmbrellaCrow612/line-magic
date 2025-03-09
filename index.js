@@ -1,4 +1,4 @@
-import { indent, removeIndention } from "./indent.js";
+import { indent, isWhiteSpaceIndention, removeIndention } from "./indent.js";
 import {
   addLineNumbers,
   extractLineRange,
@@ -19,5 +19,6 @@ export {
   visualizeNewLine,
   removeIndention,
   trimBlankLines,
-  ellipsize
+  ellipsize,
+  isWhiteSpaceIndention,
 };

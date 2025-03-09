@@ -5,12 +5,52 @@
 /**
  * Convert between spaces and tabs while maintaining structure.
  */
-function convertSpaceToTabs() {}
+function convertSpaceToTabs(str) {}
 
 /**
  * Identify whether a string uses spaces or tabs for indentation or both.
  */
-function detectIndentionStyle() {}
+function detectIndentionStyle(str) {}
+
+/**
+ * Checks if a string uses only space characters (not tabs) for indentation.
+ * This function examines characters from the beginning of the string until
+ * the first non-whitespace character is encountered.
+ *
+ * @param {string} str - The string to check for indentation style
+ * @returns {boolean} - Returns true if indentation uses only spaces or if the string
+ *                      is empty. Returns false if any tab character is found before
+ *                      the first non-whitespace character.
+ *
+ * @example
+ * // Returns true (only spaces used for indentation)
+ * isWhiteSpaceIndention("    hello");
+ *
+ * @example
+ * // Returns false (contains a tab in the indentation)
+ * isWhiteSpaceIndention("  \thello");
+ *
+ * @example
+ * // Returns true (empty string)
+ * isWhiteSpaceIndention("");
+ */
+export function isWhiteSpaceIndention(str) {
+  for (let i = 0; i < str.length; i++) {
+    let ch = str[i];
+
+    switch (ch) {
+      case " ":
+        break;
+
+      case "\t":
+        return false;
+
+      default:
+        return true;
+    }
+  }
+  return true;
+}
 
 /**
  * Ensure consistent indentation throughout a multiline string.
