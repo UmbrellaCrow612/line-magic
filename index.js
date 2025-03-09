@@ -41,7 +41,6 @@ export {
   padRight,
   getNewLineIndex,
   capFirstLetter,
-  getWord
+  getWord,
+  normalizeIndentationToTab,
 };
-
-console.log(toCamelCase("  One Two three"))
