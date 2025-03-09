@@ -92,34 +92,6 @@ export function isTabSpaceIndention(str) {
 }
 
 /**
- * Ensure consistent indentation for a string it picks up what is being used the most
- * tab or white-space and then convert the res to it
- * @param {string} str
- */
-function normalizeIndentation(str) {
-  let tabCount = 0;
-  let whiteSpaceCount = 0;
-  outerLoop: for (let i = 0; i < str.length; i++) {
-    switch (str[i]) {
-      case " ":
-        whiteSpaceCount++;
-        break;
-
-      case "\t":
-        tabCount++;
-        break;
-
-      default:
-        break outerLoop;
-    }
-
-    // todo use functions
-    // if (tabCount > whiteSpaceCount) {
-    // }
-  }
-}
-
-/**
  * Converts leading whitespace characters (spaces and tabs) in a string
  * to a consistent white space indentation until the first non-whitespace character.
  *
@@ -129,24 +101,48 @@ function normalizeIndentation(str) {
 export function normalizeIndentationToWhiteSpace(str) {
   let result = "";
   let pointer = 0;
-  let whiteSpace = "    ";
+  let tabWhiteSpace = "    ";
 
   while (pointer < str.length) {
     switch (str[pointer]) {
       case " ":
         pointer++;
-        result += whiteSpace;
+        result += " ";
         break;
 
       case "\t":
         pointer++;
-        result += whiteSpace;
+        result += tabWhiteSpace;
         break;
 
       default:
         result += str.slice(pointer);
         pointer = str.length + 1;
         break;
+    }
+  }
+  return result;
+}
+
+/**
+ * Normalizes the indentation in a string by converting spaces to tabs.
+ * Counts leading spaces and converts them to tabs (1 tab per 4 spaces).
+ *
+ * @param {string} str - The string with space indentation to normalize
+ * @returns {string} - The string with space indentation converted to tabs
+ */
+export function normalizeIndentationToTab(str) {
+  let whiteSpaceCounter = 0;
+  let result = "";
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === " ") {
+      whiteSpaceCounter++;
+    } else {
+      for (let j = 0; j < Math.floor(whiteSpaceCounter / 4); j++) {
+        result += "\t";
+      }
+      result += str.trim().slice();
+      return result;
     }
   }
   return result;

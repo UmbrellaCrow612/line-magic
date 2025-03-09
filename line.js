@@ -74,11 +74,6 @@ export function wrapText(str, length) {
 }
 
 /**
- * Find and replace text across multiple lines, not just within a single line
- */
-function findReplaceAcrossLines() {}
-
-/**
  * Count the number of words in each line of a multi-line string
  */
 function countWordsPerLine() {}
@@ -105,12 +100,6 @@ function sortLines() {}
 export function extractLines(str, range) {
   return str.split("\n").slice(0, range).join("\n");
 }
-
-/**
- * Extract a specific range of lines (e.g., lines 3 to 5) from a specific index including the line that
- * the index falls in.
- */
-function extractLineRangeFrom() {}
 
 /**
  * Extracts a range of lines from the given string based on the specified start and end line indices.
@@ -182,5 +171,5 @@ export function visualizeNewLine(str) {
  * @returns {string} The modified string with tabs replaced by "[t]".
  */
 export function visualizeTab(str) {
-  return str.replaceAll("\t", "[t]");
+  return str.replaceAll("\t", "[→]");
 }

@@ -5,6 +5,7 @@ import {
   isTabSpaceIndention,
   detectIndentionStyle,
   normalizeIndentationToWhiteSpace,
+  normalizeIndentationToTab,
 } from "./indent.js";
 import {
   addLineNumbers,
@@ -32,5 +33,5 @@ export {
   isTabSpaceIndention,
   detectIndentionStyle,
   visualizeTab,
-  normalizeIndentationToWhiteSpace
+  normalizeIndentationToWhiteSpace,
 };
