@@ -39,7 +39,7 @@ export function toCamelCase(str) {
   return result;
 }
 
-export function isCamelCase() {}
+export function isCamelCase(str) {}
 
 export function toSnakeCase() {}
 

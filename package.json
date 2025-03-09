@@ -1,6 +1,6 @@
 {
   "name": "line-magic",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "A util library for manipulating lines in JavaScript",
   "main": "index.js",
   "type": "module",
@@ -11,7 +11,12 @@
     "Line",
     "Util",
     "JavaScript",
-    "Helper"
+    "Helper",
+    "Pad",
+    "Ellipses",
+    "Indent",
+    "Word",
+    "Visual"
   ],
   "author": "Yousaf Wazir",
   "license": "ISC"
