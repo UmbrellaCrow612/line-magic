@@ -8,9 +8,26 @@
 function convertSpaceToTabs(str) {}
 
 /**
- * Identify whether a string uses spaces or tabs for indentation or both.
+ * Detects the indentation style used in a given string.
+ *
+ * @param {string} str - The input string to analyze.
+ * @returns {"white-space" | "tab" | "unknown"} - The detected indentation style:
+ *   - `"white-space"` if spaces are used for indentation.
+ *   - `"tab"` if tabs are used for indentation.
+ *   - `"unknown"` if neither or mixed indentation is detected.
  */
-function detectIndentionStyle(str) {}
+export function detectIndentionStyle(str) {
+  switch (true) {
+    case isWhiteSpaceIndention(str):
+      return "white-space";
+
+    case isTabSpaceIndention(str):
+      return "tab";
+
+    default:
+      return "unknown";
+  }
+}
 
 /**
  * Checks if a string uses only space characters (not tabs) for indentation.
@@ -44,6 +61,33 @@ export function isWhiteSpaceIndention(str) {
 
       case "\t":
         return false;
+
+      default:
+        return true;
+    }
+  }
+  return true;
+}
+
+/**
+ * Checks if the given string starts with tab-based indentation.
+ * It iterates through the string until the first non-tab or whitespace character
+ * and determines whether the indentation consists of only tab characters.
+ *
+ * @param {string} str - The input string to check.
+ * @returns {boolean} - Returns `true` if the indentation is tab-based or if the string is empty.
+ *                      Returns `false` if it contains spaces before any other character.
+ */
+export function isTabSpaceIndention(str) {
+  for (let i = 0; i < str.length; i++) {
+    let ch = str[i];
+
+    switch (ch) {
+      case " ":
+        return false;
+
+      case "\t":
+        break;
 
       default:
         return true;
