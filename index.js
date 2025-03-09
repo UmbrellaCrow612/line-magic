@@ -4,12 +4,14 @@ import {
   removeIndention,
   isTabSpaceIndention,
   detectIndentionStyle,
+  normalizeIndentationToWhiteSpace,
 } from "./indent.js";
 import {
   addLineNumbers,
   extractLineRange,
   extractLines,
   visualizeNewLine,
+  visualizeTab,
   visualizeWhitespace,
   wrapText,
 } from "./line.js";
@@ -29,4 +31,6 @@ export {
   isWhiteSpaceIndention,
   isTabSpaceIndention,
   detectIndentionStyle,
+  visualizeTab,
+  normalizeIndentationToWhiteSpace
 };

@@ -3,11 +3,6 @@
  */
 
 /**
- * Convert between spaces and tabs while maintaining structure.
- */
-function convertSpaceToTabs(str) {}
-
-/**
  * Detects the indentation style used in a given string.
  *
  * @param {string} str - The input string to analyze.
@@ -97,9 +92,65 @@ export function isTabSpaceIndention(str) {
 }
 
 /**
- * Ensure consistent indentation throughout a multiline string.
+ * Ensure consistent indentation for a string it picks up what is being used the most
+ * tab or white-space and then convert the res to it
+ * @param {string} str
  */
-function normalizeIndentation() {}
+function normalizeIndentation(str) {
+  let tabCount = 0;
+  let whiteSpaceCount = 0;
+  outerLoop: for (let i = 0; i < str.length; i++) {
+    switch (str[i]) {
+      case " ":
+        whiteSpaceCount++;
+        break;
+
+      case "\t":
+        tabCount++;
+        break;
+
+      default:
+        break outerLoop;
+    }
+
+    // todo use functions
+    // if (tabCount > whiteSpaceCount) {
+    // }
+  }
+}
+
+/**
+ * Converts leading whitespace characters (spaces and tabs) in a string
+ * to a consistent white space indentation until the first non-whitespace character.
+ *
+ * @param {string} str - The input string to normalize indentation for.
+ * @returns {string} - The string with normalized indentation.
+ */
+export function normalizeIndentationToWhiteSpace(str) {
+  let result = "";
+  let pointer = 0;
+  let whiteSpace = "    ";
+
+  while (pointer < str.length) {
+    switch (str[pointer]) {
+      case " ":
+        pointer++;
+        result += whiteSpace;
+        break;
+
+      case "\t":
+        pointer++;
+        result += whiteSpace;
+        break;
+
+      default:
+        result += str.slice(pointer);
+        pointer = str.length + 1;
+        break;
+    }
+  }
+  return result;
+}
 
 /**
  * Adds indentation to a string by a specified amount, using either spaces or tabs.

@@ -174,3 +174,13 @@ export function visualizeWhitespace(str) {
 export function visualizeNewLine(str) {
   return str.replaceAll("\n", "\n[n]");
 }
+
+/**
+ * Replaces all tab characters in a string with a visual representation.
+ *
+ * @param {string} str - The input string containing tab characters.
+ * @returns {string} The modified string with tabs replaced by "[t]".
+ */
+export function visualizeTab(str) {
+  return str.replaceAll("\t", "[t]");
+}
