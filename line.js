@@ -74,16 +74,6 @@ export function wrapText(str, length) {
 }
 
 /**
- * Count the number of words in each line of a multi-line string
- */
-function countWordsPerLine() {}
-
-/**
- * Sort lines based on a custom sorting function or by predefined criteria (alphabetically, by word count, etc.)
- */
-function sortLines() {}
-
-/**
  * Extracts the first few lines from a given string.
  * The function splits the string by newline characters and returns the specified number of lines.
  * If the provided range exceeds the total number of lines in the string, it will return all lines.
@@ -172,4 +162,16 @@ export function visualizeNewLine(str) {
  */
 export function visualizeTab(str) {
   return str.replaceAll("\t", "[→]");
+}
+
+/**
+ * Returns the index of the first newline character in a string.
+ * If no newline is found, it returns the length of the string.
+ *
+ * @param {string} str - The string to search for the newline character.
+ * @returns {number} - The index of the first newline, or the length of the string if no newline is found.
+ */
+export function getNewLineIndex(str) {
+  const index = str.indexOf("\n");
+  return index === -1 ? str.length : index;
 }

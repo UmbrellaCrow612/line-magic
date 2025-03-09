@@ -1,3 +1,4 @@
+import { capFirstLetter, getWord, toCamelCase } from "./case.js";
 import {
   indent,
   isWhiteSpaceIndention,
@@ -11,6 +12,7 @@ import {
   addLineNumbers,
   extractLineRange,
   extractLines,
+  getNewLineIndex,
   visualizeNewLine,
   visualizeTab,
   visualizeWhitespace,
@@ -36,5 +38,10 @@ export {
   visualizeTab,
   normalizeIndentationToWhiteSpace,
   padLeft,
-  padRight
+  padRight,
+  getNewLineIndex,
+  capFirstLetter,
+  getWord
 };
+
+console.log(toCamelCase("  One Two three"))
