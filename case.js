@@ -39,7 +39,47 @@ export function toCamelCase(str) {
   return result;
 }
 
-export function isCamelCase(str) {}
+/**
+ * Checks if a given string follows camelCase naming convention.
+ *
+ * A string is considered camelCase if:
+ * - It starts with a lowercase letter.
+ * - It does not contain spaces or special characters.
+ * - Any subsequent words start with an uppercase letter, followed by lowercase letters.
+ *
+ * @param {string} str - The string to check.
+ * @returns {boolean} - Returns `true` if the string is in camelCase, otherwise `false`.
+ */
+export function isCamelCase(str) {
+  if (str.length < 1) return false;
+  let _str = str.trim();
+
+  let hasSeenFirstNoneCapitalFirstLetterWord = false;
+  for (let i = 0; i < _str.length; i++) {
+    let ch = _str[i];
+
+    if (!hasSeenFirstNoneCapitalFirstLetterWord) {
+      if (isLower(ch)) {
+        hasSeenFirstNoneCapitalFirstLetterWord = true;
+        continue;
+      } else {
+        return false;
+      }
+    } else {
+      if (isLower(ch)) {
+        continue;
+      } else {
+        if (i + 1 < _str.length) {
+          let isNextCharCaps = !isLower(_str[i + 1]);
+          if (isNextCharCaps) {
+            return false;
+          }
+        }
+      }
+    }
+  }
+  return true;
+}
 
 export function toSnakeCase() {}
 
@@ -93,4 +133,13 @@ export function capFirstLetter(str) {
   }
 
   return "";
+}
+
+/**
+ * Helper function to see if a string is lowercase
+ * @param {string} str
+ */
+function isLower(str) {
+  let trueLower = str.toLowerCase();
+  return str === trueLower;
 }

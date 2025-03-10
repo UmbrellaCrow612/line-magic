@@ -1,4 +1,4 @@
-import { capFirstLetter, getWord, toCamelCase } from "./case.js";
+import { capFirstLetter, getWord, isCamelCase, toCamelCase } from "./case.js";
 import {
   indent,
   isWhiteSpaceIndention,
@@ -43,4 +43,5 @@ export {
   capFirstLetter,
   getWord,
   normalizeIndentationToTab,
+  isCamelCase,
 };
