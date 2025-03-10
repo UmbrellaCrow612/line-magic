@@ -139,7 +139,7 @@ export function capFirstLetter(str) {
  * Helper function to see if a string is lowercase
  * @param {string} str
  */
-function isLower(str) {
+export function isLower(str) {
   let trueLower = str.toLowerCase();
   return str === trueLower;
 }
