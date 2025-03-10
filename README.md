@@ -5,8 +5,7 @@ A string helper library to manipulate lines or strings in JavaScript
 Supported methods:
 
 ```js
-
-  addLineNumbers,
+ addLineNumbers,
   wrapText,
   indent,
   extractLines,
@@ -31,5 +30,7 @@ Supported methods:
   toCamelCase,
   isLower,
   diff,
+  trimToSentence,
+  trimAndNormalize,
 
 ```

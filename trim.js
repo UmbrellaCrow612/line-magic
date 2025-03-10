@@ -32,11 +32,30 @@ export function ellipsize(str, length) {
 }
 
 /**
- * return first line to the .
+ * Returns the first sentence of a string, up to the first period.
+ * If no period is found, returns the entire string.
+ *
+ * @param {string} str - The input string to process
+ * @returns {string} The substring from the beginning to the first period (exclusive)
  */
-export function trimToSentence() {}
+export function trimToSentence(str) {
+  let breakIndex = str.indexOf(".");
+  if (breakIndex === -1) {
+    breakIndex = str.length;
+  }
+  return str.substring(0, breakIndex);
+}
 
 /**
- * Remove whitespace front and back and space between words be just a single " "
+ * Removes whitespace from the front and back of a string and ensures there's only
+ * a single space between words.
+ *
+ * @param {string} str - The input string to normalize
+ * @returns {string} A normalized string with excess whitespace removed
  */
-export function trimAndNormalize() {}
+export function trimAndNormalize(str) {
+  return str
+    .split(" ")
+    .filter((x) => x.trim() !== "")
+    .join(" ");
+}

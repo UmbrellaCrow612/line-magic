@@ -26,7 +26,12 @@ import {
   wrapText,
 } from "./line.js";
 import { padLeft, padRight } from "./pad.js";
-import { ellipsize, trimBlankLines } from "./trim.js";
+import {
+  ellipsize,
+  trimAndNormalize,
+  trimBlankLines,
+  trimToSentence,
+} from "./trim.js";
 
 export {
   addLineNumbers,
@@ -54,4 +59,6 @@ export {
   toCamelCase,
   isLower,
   diff,
+  trimToSentence,
+  trimAndNormalize,
 };
