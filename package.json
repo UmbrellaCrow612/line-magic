@@ -1,6 +1,6 @@
 {
   "name": "line-magic",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "A util library for manipulating lines in JavaScript",
   "main": "index.js",
   "type": "module",
@@ -20,5 +20,9 @@
     "Case"
   ],
   "author": "Yousaf Wazir",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UmbrellaCrow612/line-magic"
+  }
 }
