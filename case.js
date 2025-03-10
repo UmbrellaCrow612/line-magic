@@ -81,9 +81,53 @@ export function isCamelCase(str) {
   return true;
 }
 
-export function toSnakeCase() {}
+/**
+ * Converts a space-separated string to snake_case.
+ *
+ * This function trims leading and trailing spaces, splits the string into words using whitespace as a delimiter,
+ * converts all words to lowercase, and then joins them using an underscore.
+ *
+ * @param {string} str - The input string containing words separated by spaces.
+ * @returns {string} The converted string in snake_case format.
+ *
+ * @example
+ * toSnakeCase("Hello World"); // "hello_world"
+ * toSnakeCase("  JavaScript is fun  "); // "javascript_is_fun"
+ * toSnakeCase("singleWord"); // "singleword"
+ */
+export function toSnakeCase(str) {
+  return str
+    .trim()
+    .split(/\s+/)
+    .map((word) => word.toLowerCase())
+    .join("_");
+}
 
-export function isSnakeCase() {}
+/**
+ *
+ * @param {string} str
+ */
+export function isSnakeCase(str) {
+  let _str = str.trim();
+  let first = false;
+  for (let i = 0; i < _str.length; i++) {
+    let ch = _str[i];
+
+    if (!first) {
+      if (ch !== "_") {
+        first = true;
+        continue;
+      } else {
+        return false;
+      }
+    }
+
+    if (!isLower(ch)) {
+      return false;
+    }
+  }
+  return true;
+}
 
 export function toPascalCase() {}
 

@@ -5,6 +5,7 @@ import {
   isLower,
   toCamelCase,
 } from "./case.js";
+import { diff } from "./diff.js";
 import {
   indent,
   isWhiteSpaceIndention,
@@ -52,4 +53,5 @@ export {
   isCamelCase,
   toCamelCase,
   isLower,
+  diff,
 };

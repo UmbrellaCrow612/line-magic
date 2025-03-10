@@ -30,5 +30,6 @@ Supported methods:
   isCamelCase,
   toCamelCase,
   isLower,
+  diff,
 
 ```
